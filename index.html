@@ -91,6 +91,19 @@ h2 {
   cursor: not-allowed;
 }
 
+.voice-display {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f0f8ff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  font-weight: 600;
+  color: #333;
+}
+
 /* Responsive tweaks for small devices */
 @media (max-width: 500px) {
   h1 {
@@ -138,6 +151,8 @@ h2 {
   <h1>🔊 Voice Controlled Blynk Panel</h1>
 
   <button id="startVoice" class="voice-btn">🎤 Start Voice Command</button>
+  <div id="voiceOutput" class="voice-display">You said: ...</div>
+
 
  <!-- App 1 Section -->
 <div class="section">
@@ -243,8 +258,9 @@ function startRecognition() {
   recognition.onresult = function(event) {
     const command = event.results[event.results.length - 1][0].transcript.toLowerCase();
     console.log("Voice command:", command);
+    document.getElementById("voiceOutput").textContent = "You said: " + command;
 
-   // Voice command mapping
+ // Voice command mapping
         if (command.includes("light on")) toggle("app1", 3, 1);
 
         else if (command.includes("light off")) toggle("app1", 3, 0);
@@ -285,6 +301,7 @@ function startRecognition() {
 
 // ✅ প্রথমবার ক্লিক করার জন্য event listener
 document.getElementById("startVoice").addEventListener("click", setupVoiceRecognition);
+
 
 function initializeStates() {
   for (const appName in apps) {
