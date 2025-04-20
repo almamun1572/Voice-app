@@ -276,12 +276,13 @@ function startRecognition() {
         else if (command.includes("fan up")) toggle("app1", 4, 0);
         else if (command.includes("fan of")) toggle("app1", 4, 0);
         else if (command.includes("hand of")) toggle("app1", 4, 0);
+        else if (command.includes("hang up")) toggle("app1", 4, 0);
+        else if (command.includes("pan off")) toggle("app1", 4, 0);
 
         else if (command.includes("motor on")) toggle("app2", 2, 1);
         else if (command.includes("motor off")) toggle("app2", 2, 0);
         else if (command.includes("motor of")) toggle("app2", 2, 0);
-       
-        else alert("Sorry, command not recognized.");
+    
     };
 
   recognition.onerror = function(event) {
