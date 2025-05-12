@@ -263,6 +263,7 @@ function startRecognition() {
  // Voice command mapping
         if (command.includes("light on")) toggle("app1", 3, 1);
 
+         
         else if (command.includes("light off")) toggle("app1", 3, 0);
         else if (command.includes("light of")) toggle("app1", 3, 0);
         else if (command.includes("light up")) toggle("app1", 3, 0);
@@ -285,7 +286,12 @@ function startRecognition() {
         else if (command.includes("motor on")) toggle("app2", 2, 1);
         else if (command.includes("motor off")) toggle("app2", 2, 0);
         else if (command.includes("motor of")) toggle("app2", 2, 0);
-    
+
+        else if (command.includes("mic on")) toggle("app2", 4, 1);
+        else if (command.includes("mic of")) toggle("app2", 4, 0);
+        else if (command.includes("mic off")) toggle("app2", 4, 0);
+
+
     };
 
   recognition.onerror = function(event) {
