@@ -267,11 +267,12 @@ function startRecognition() {
         else if (command.includes("light of")) toggle("app1", 3, 0);
         else if (command.includes("light up")) toggle("app1", 3, 0);
 
-
+        else if (command.includes("pen on")) toggle("app1", 4, 1);
         else if (command.includes("fan on")) toggle("app1", 4, 1);
         else if (command.includes("fan one")) toggle("app1", 4, 1);
         else if (command.includes("hand on")) toggle("app1", 4, 1);
 
+        else if (command.includes("pen off")) toggle("app1", 4, 0);
         else if (command.includes("fan off")) toggle("app1", 4, 0);
         else if (command.includes("fan up")) toggle("app1", 4, 0);
         else if (command.includes("fan of")) toggle("app1", 4, 0);
